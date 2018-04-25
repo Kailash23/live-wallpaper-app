@@ -63,8 +63,6 @@ public class ParticlesRenderer implements Renderer {
 
     private final float[] modelViewProjectionMatrix = new float[16];
 
-
-
     private ParticleShaderProgram particleProgram;
     private ParticleSystem particleSystem;
     private ParticleShooter redParticleShooter;
@@ -86,6 +84,12 @@ public class ParticlesRenderer implements Renderer {
         this.context = context;
     }
 
+    // This method will take in the distance the user dragged in each direction and
+    //add it to xRotation and yRotation, which represent the rotation in degrees. We
+    //don’t want the touch to be too sensitive, so we scale down the effect by 16,
+    //and we don’t want to rotate too far up and down, so we clamp the y rotation
+    //between +90 degrees and -90 degrees.
+    //TODO: Drag Sensitivity
     public void handleTouchDrag(float deltaX, float deltaY) {
         xRotation += deltaX / 16f;
         yRotation += deltaY / 16f;
@@ -100,6 +104,7 @@ public class ParticlesRenderer implements Renderer {
         updateViewMatrices();
     }
 
+
     public void handleOffsetsChanged(float xOffset, float yOffset) {
         // Offsets range from 0 to 1.
         this.xOffset = (xOffset - 0.5f) * 2.5f;
@@ -113,8 +118,6 @@ public class ParticlesRenderer implements Renderer {
         rotateM(viewMatrix, 0, -xRotation, 0f, 1f, 0f);
         System.arraycopy(viewMatrix, 0, viewMatrixForSkybox, 0, viewMatrix.length);
 
-        // We want the translation to apply to the regular view matrix, and not
-        // the skybox.
         translateM(viewMatrix, 0, 0 - xOffset, -1.5f - yOffset, -5f);
 
     }
@@ -144,11 +147,11 @@ public class ParticlesRenderer implements Renderer {
         // time will be 0.0 and a particle created at that time will have a
         // creation time of 0.0.
 
-
-        final Geometry.Vector particleDirection = new Geometry.Vector(0f, 0.5f, 0f);
+        //TODO: Particle direction
+        final Geometry.Vector particleDirection = new Geometry.Vector(0f, 0.45f, 0f);
 
         // We’ve set things up so that each particle fountain has an angle
-        // variance of 5 degrees and a speed variance of 1 unit.
+        // variance of 15 degrees and a speed variance of 1 unit.
 
         // TODO: Angle and speed from here
         final float angleVarianceInDegrees = 15f;
@@ -203,7 +206,7 @@ public class ParticlesRenderer implements Renderer {
     private void limitFrameRate(int framesPerSecond) {
         long elapsedFrameTimeMs = SystemClock.elapsedRealtime() - frameStartTimeMs;
         // TODO: FPS can be adjusted here (Set to MAX FPS)
-        long expectedFrameTimeMs = 10 / framesPerSecond;
+        long expectedFrameTimeMs = 700 / framesPerSecond;
         long timeToSleepMs = expectedFrameTimeMs - elapsedFrameTimeMs;
 
         if (timeToSleepMs > 0) {
@@ -244,6 +247,7 @@ public class ParticlesRenderer implements Renderer {
         // globalStartTime, and since System.nanoTime() returns the time in nanoseconds,
         // we’ll just need to divide the difference by 1 trillion to convert this into seconds.
 
+        //TODO: No of particle can be changed here
         redParticleShooter.addParticles(particleSystem, currentTime, 2);
         greenParticleShooter.addParticles(particleSystem, currentTime, 6);
         blueParticleShooter.addParticles(particleSystem, currentTime, 2);

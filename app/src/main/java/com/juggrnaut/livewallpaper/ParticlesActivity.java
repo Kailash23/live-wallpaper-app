@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class ParticlesActivity extends Activity {
 
-   // Hold a reference to our GLSurfaceView
+    // Hold a reference to our GLSurfaceView
     private GLSurfaceView glSurfaceView;
     private boolean rendererSet = false;
 
@@ -59,11 +59,26 @@ public class ParticlesActivity extends Activity {
         }
 
         glSurfaceView.setOnTouchListener(new OnTouchListener() {
+
+            // This code defines a touch listener that will measure how far you’ve dragged
+            // your finger between each successive call to onTouch(). When you first touch
+            // the screen, the current touch position will be recorded in previousX and previousY.
+
+            // As you drag your finger across the screen, you’ll get a bunch of drag events,
+            // and each time you do, you’ll first take the difference between the new position
+            // and the old position and store that into deltaX and deltaY, and then you’ll update
+            // previousX and previousY. The deltas will be passed into the particle renderer by
+            // calling handleTouchDrag().
+
             float previousX, previousY;
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event != null) {
+
+                    // Convert touch coordinates into normalized device
+                    // coordinates, keeping in mind that Android's Y
+                    // coordinates are inverted.
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         previousX = event.getX();
                         previousY = event.getY();
@@ -81,6 +96,7 @@ public class ParticlesActivity extends Activity {
                                         deltaX, deltaY);
                             }
                         });
+
                     }
 
                     return true;
@@ -109,5 +125,10 @@ public class ParticlesActivity extends Activity {
         if (rendererSet) {
             glSurfaceView.onResume();
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
     }
 }
