@@ -5,22 +5,17 @@ import static android.opengl.GLES20.GL_COLOR_BUFFER_BIT;
 import static android.opengl.GLES20.GL_CULL_FACE;
 import static android.opengl.GLES20.GL_DEPTH_BUFFER_BIT;
 import static android.opengl.GLES20.GL_DEPTH_TEST;
-import static android.opengl.GLES20.GL_LEQUAL;
-import static android.opengl.GLES20.GL_LESS;
 import static android.opengl.GLES20.GL_ONE;
 import static android.opengl.GLES20.glBlendFunc;
 import static android.opengl.GLES20.glClear;
 import static android.opengl.GLES20.glClearColor;
-import static android.opengl.GLES20.glDepthFunc;
 import static android.opengl.GLES20.glDepthMask;
 import static android.opengl.GLES20.glDisable;
 import static android.opengl.GLES20.glEnable;
 import static android.opengl.GLES20.glViewport;
 import static android.opengl.Matrix.invertM;
 import static android.opengl.Matrix.multiplyMM;
-import static android.opengl.Matrix.multiplyMV;
 import static android.opengl.Matrix.rotateM;
-import static android.opengl.Matrix.scaleM;
 import static android.opengl.Matrix.setIdentityM;
 import static android.opengl.Matrix.translateM;
 import static android.opengl.Matrix.transposeM;
@@ -206,7 +201,7 @@ public class ParticlesRenderer implements Renderer {
     private void limitFrameRate(int framesPerSecond) {
         long elapsedFrameTimeMs = SystemClock.elapsedRealtime() - frameStartTimeMs;
         // TODO: FPS can be adjusted here (Set to MAX FPS)
-        long expectedFrameTimeMs = 700 / framesPerSecond;
+        long expectedFrameTimeMs = 50 / framesPerSecond;
         long timeToSleepMs = expectedFrameTimeMs - elapsedFrameTimeMs;
 
         if (timeToSleepMs > 0) {
