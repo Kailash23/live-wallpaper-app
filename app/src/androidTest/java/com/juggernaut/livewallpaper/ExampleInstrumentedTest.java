@@ -1,4 +1,4 @@
-package com.juggrnaut.livewallpaper;
+package com.juggernaut.livewallpaper;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

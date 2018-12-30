@@ -1,4 +1,4 @@
-package com.juggrnaut.livewallpaper;
+package com.juggernaut.livewallpaper;
 
 import org.junit.Test;
 

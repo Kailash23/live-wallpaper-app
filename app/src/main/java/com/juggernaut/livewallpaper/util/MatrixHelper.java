@@ -1,4 +1,4 @@
-package com.juggrnaut.livewallpaper.util;
+package com.juggernaut.livewallpaper.util;
 
 public class MatrixHelper {
     public static void perspectiveM(float[] m, float yFovInDegrees, float aspect,

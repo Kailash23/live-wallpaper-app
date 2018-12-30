@@ -1,8 +1,8 @@
-package com.juggrnaut.livewallpaper.util;
+package com.juggernaut.livewallpaper.util;
 
 import android.util.Log;
 
-import com.juggrnaut.livewallpaper.BuildConfig;
+import com.juggernaut.livewallpaper.BuildConfig;
 
 public class LogUtil {
 

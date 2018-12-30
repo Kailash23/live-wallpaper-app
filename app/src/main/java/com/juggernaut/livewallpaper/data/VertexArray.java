@@ -1,12 +1,12 @@
-package com.juggrnaut.livewallpaper.data;
-
-import static android.opengl.GLES20.GL_FLOAT;
-import static android.opengl.GLES20.glEnableVertexAttribArray;
-import static android.opengl.GLES20.glVertexAttribPointer;
+package com.juggernaut.livewallpaper.data;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+
+import static android.opengl.GLES20.GL_FLOAT;
+import static android.opengl.GLES20.glEnableVertexAttribArray;
+import static android.opengl.GLES20.glVertexAttribPointer;
 
 public class VertexArray {
     private final FloatBuffer floatBuffer;
@@ -29,10 +29,10 @@ public class VertexArray {
         floatBuffer.position(0);
     }
 
-
-     //Updates the float buffer with the specified vertex data, assuming that
-     //the vertex data and the float buffer are the same size.
-
+    /**
+     * Updates the float buffer with the specified vertex data, assuming that the vertex data and the
+     * float buffer are the same size.
+     */
     public void updateBuffer(float[] vertexData, int start, int count) {
         floatBuffer.position(start);
         floatBuffer.put(vertexData, start, count);

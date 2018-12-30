@@ -1,4 +1,4 @@
-package com.juggrnaut.livewallpaper;
+package com.juggernaut.livewallpaper;
 
 import static android.opengl.GLES20.GL_BLEND;
 import static android.opengl.GLES20.GL_COLOR_BUFFER_BIT;
@@ -29,13 +29,13 @@ import android.opengl.GLSurfaceView.Renderer;
 import android.os.SystemClock;
 import android.util.Log;
 
-import com.juggrnaut.livewallpaper.objects.ParticleShooter;
-import com.juggrnaut.livewallpaper.objects.ParticleSystem;
-import com.juggrnaut.livewallpaper.programs.ParticleShaderProgram;
-import com.juggrnaut.livewallpaper.util.Geometry;
-import com.juggrnaut.livewallpaper.util.LoggerConfig;
-import com.juggrnaut.livewallpaper.util.MatrixHelper;
-import com.juggrnaut.livewallpaper.util.TextureHelper;
+import com.juggernaut.livewallpaper.objects.ParticleShooter;
+import com.juggernaut.livewallpaper.objects.ParticleSystem;
+import com.juggernaut.livewallpaper.programs.ParticleShaderProgram;
+import com.juggernaut.livewallpaper.util.Geometry;
+import com.juggernaut.livewallpaper.util.LoggerConfig;
+import com.juggernaut.livewallpaper.util.MatrixHelper;
+import com.juggernaut.livewallpaper.util.TextureHelper;
 
 /**
  * Particles in action.

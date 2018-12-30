@@ -1,4 +1,4 @@
-package com.juggrnaut.livewallpaper;
+package com.juggernaut.livewallpaper;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -60,15 +60,15 @@ public class ParticlesActivity extends Activity {
 
         glSurfaceView.setOnTouchListener(new OnTouchListener() {
 
-            // This code defines a touch listener that will measure how far you’ve dragged
-            // your finger between each successive call to onTouch(). When you first touch
-            // the screen, the current touch position will be recorded in previousX and previousY.
-
-            // As you drag your finger across the screen, you’ll get a bunch of drag events,
-            // and each time you do, you’ll first take the difference between the new position
-            // and the old position and store that into deltaX and deltaY, and then you’ll update
-            // previousX and previousY. The deltas will be passed into the particle renderer by
-            // calling handleTouchDrag().
+            /**
+             * This code defines a touch listener that will measure how far you’ve dragged your finger
+             * between each successive call to onTouch(). When you first touch the screen, the current
+             * touch position will be recorded in previousX and previousY. As you drag your finger
+             * across the screen, you’ll get a bunch of drag events, and each time you do, you’ll first
+             * take the difference between the new position and the old position and store that into
+             * deltaX and deltaY, and then you’ll update previousX and previousY. The deltas will be
+             * passed into the particle renderer by calling handleTouchDrag().
+             */
 
             float previousX, previousY;
 
@@ -76,9 +76,10 @@ public class ParticlesActivity extends Activity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event != null) {
 
-                    // Convert touch coordinates into normalized device
-                    // coordinates, keeping in mind that Android's Y
-                    // coordinates are inverted.
+                    /*
+                      Convert touch coordinates into normalized device coordinates, keeping in mind
+                      that Android's Y coordinates are inverted.
+                     */
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         previousX = event.getX();
                         previousY = event.getY();

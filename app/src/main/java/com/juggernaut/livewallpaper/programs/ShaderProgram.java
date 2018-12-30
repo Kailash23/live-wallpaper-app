@@ -1,11 +1,11 @@
-package com.juggrnaut.livewallpaper.programs;
+package com.juggernaut.livewallpaper.programs;
 
 import android.content.Context;
 
-import static android.opengl.GLES20.glUseProgram;
+import com.juggernaut.livewallpaper.util.ShaderHelper;
+import com.juggernaut.livewallpaper.util.TextResourceReader;
 
-import com.juggrnaut.livewallpaper.util.ShaderHelper;
-import com.juggrnaut.livewallpaper.util.TextResourceReader;
+import static android.opengl.GLES20.glUseProgram;
 
 abstract class ShaderProgram {
     // Uniform constants

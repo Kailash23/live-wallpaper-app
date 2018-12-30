@@ -1,4 +1,8 @@
-package com.juggrnaut.livewallpaper.programs;
+package com.juggernaut.livewallpaper.programs;
+
+import android.content.Context;
+
+import com.juggernaut.livewallpaper.R;
 
 import static android.opengl.GLES20.GL_TEXTURE0;
 import static android.opengl.GLES20.GL_TEXTURE_2D;
@@ -10,12 +14,11 @@ import static android.opengl.GLES20.glUniform1f;
 import static android.opengl.GLES20.glUniform1i;
 import static android.opengl.GLES20.glUniformMatrix4fv;
 
-import android.content.Context;
 
-import com.juggrnaut.livewallpaper.R;
-
-/* With the shader code completed, we can now wrap the shader using a Java
-class */
+/**
+ * With the shader code completed, we can now wrap the shader using a Java
+ * class
+ */
 
 public class ParticleShaderProgram extends ShaderProgram {
 

@@ -1,4 +1,4 @@
-package com.juggrnaut.livewallpaper.wallpaper;
+package com.juggernaut.livewallpaper.wallpaper;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
@@ -12,8 +12,8 @@ import android.view.SurfaceHolder;
 import android.widget.Toast;
 
 
-import com.juggrnaut.livewallpaper.ParticlesRenderer;
-import com.juggrnaut.livewallpaper.util.LoggerConfig;
+import com.juggernaut.livewallpaper.ParticlesRenderer;
+import com.juggernaut.livewallpaper.util.LoggerConfig;
 
 public class GLWallpaperService extends WallpaperService {
     @Override
